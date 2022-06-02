@@ -1,0 +1,39 @@
+
+1. Login via SSH 103.77.186.61
+
+2. Ensure GPU drivers are properly installed
+	nvidia-smi
+
+3. Check nvidia CUDA and driver versions
+	CUDA -> 11.4 (usually backward compaitible)
+	Driver Version -> 470.103.01
+
+   Ensure compatibility of Tensorflow -> https://www.tensorflow.org/install/source
+
+4. Ensure docker is installed and is working
+	docker run hello-world
+
+5. [ONLY ONCE PER SYSTEM] Create an account on nvidia NGC. Goto settings and click generate api keys and follow the instructions. NO NEED FOR THIS STEP ON PARAM SHAVAK.
+
+6. Search for required container on -> https://catalog.ngc.nvidia.com/orgs/nvidia/containers/
+
+  Ensure GPU Compatibility by reading about that container on - https://docs.nvidia.com/deeplearning/frameworks/index.html
+
+7. Pull docker image e.g., docker pull nvcr.io/nvidia/tensorflow:19.07-py3
+
+8. Check whether image is correctly downloaded
+	docker images
+
+9. Start docker container:
+	docker run --gpus all -it --rm -v /home/abhi_cse_1900290100005:/mnt nvcr.io/nvidia/tensorflow:19.07-py3
+
+10. Run nvidia-examples
+	cd nvidia-examples
+	python vgg.py --layers 19
+
+   Check GPU usage in seperate tab connected to PARAM SHAVAK via ssh. Use command watch->      nvidia-smi
+
+11. Exit container by typing -->              exit
+
+
+
