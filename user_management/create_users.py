@@ -22,7 +22,7 @@ else:
 
 for user in usernames:
     #Adding user
-    useradd_command = f'useradd -m {user}'.split()
+    useradd_command = f'useradd -m -s /bin/bash {user}'.split()
     u = Popen(['sudo', '-S'] + useradd_command, stdin=PIPE, stderr=PIPE, universal_newlines=True)
     sudo_prompt = u.communicate(sudo_password + '\n')[1]
 
