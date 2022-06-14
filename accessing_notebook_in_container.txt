@@ -1,0 +1,12 @@
+Reference - https://stackoverflow.com/questions/38830610/access-jupyter-notebook-running-on-docker-container
+
+
+1. Start the container on remote server : docker run --gpus all -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:22.05-tf2-py3 
+
+2. Start jupyter notebook inside container on remote server : jupyter notebook --ip 0.0.0.0 --no-browser
+
+3. Note down the access token
+
+4. On the local system do the port forwarding : ssh -N -f -L localhost:9000:localhost:8888 shavak@103.77.186.61
+
+5. Open browser on local system and type : localhost:9000
