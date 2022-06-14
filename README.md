@@ -1,1 +1,1 @@
-This is a collection of handy python scripts for various purpose
+This is a collection of handy scripts and guides for various purposes of Devops and ML
