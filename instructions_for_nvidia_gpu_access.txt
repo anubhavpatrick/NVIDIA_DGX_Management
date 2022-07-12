@@ -27,6 +27,14 @@
 9. Start docker container:
 	docker run --gpus all -it --rm -v /home/abhi_cse_1900290100005:/mnt nvcr.io/nvidia/tensorflow:19.07-py3
 
+  9.1.  If the system contains multiple GPUs like DGX then we can select subset of GPUs as follows
+        docker run --gpus 4 -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:22.06-tf2-py3
+        Here we are demanding 4 GPUs
+  
+  9.2.  To select a particular GPU, we must know its GPU ID (which can be found using nvidia-smi command)
+        docker run --gpus '"device=0"' -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:22.06-tf2-py3
+        Here we want to use only 1 GPU with GPU ID 0
+
 10. Run nvidia-examples
 	cd nvidia-examples
 	python vgg.py --layers 19
