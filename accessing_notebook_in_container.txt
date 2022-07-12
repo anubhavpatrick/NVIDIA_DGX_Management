@@ -3,6 +3,18 @@ Reference - https://stackoverflow.com/questions/38830610/access-jupyter-notebook
 
 1. Start the container on remote server : docker run --gpus all -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:22.05-tf2-py3 
 
+- If the system contains multiple GPUs like DGX then we can select subset of GPUs as follows
+  
+  docker run --gpus 4 -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:22.06-tf2-py3
+  
+  Here we are demanding 4 GPUs
+  
+- To select a particular GPU, we must know its GPU ID (which can be found using nvidia-smi command)
+
+  docker run --gpus '"device=0"' -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:22.06-tf2-py3
+  
+  Here we want to use only 1 GPU with GPU ID 0
+
 2. Start jupyter notebook inside container on remote server : jupyter notebook --ip 0.0.0.0 --no-browser
 
 3. Note down the access token
