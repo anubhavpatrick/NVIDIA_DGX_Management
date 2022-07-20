@@ -38,6 +38,8 @@ for user in usernames:
     sudo_prompt = d.communicate(sudo_password +'\n')[1]
     
 
+os.system('newgrp docker')    
+
 print('List of users\n')
 os.system('cut -d : -f 1 /etc/passwd')
 
