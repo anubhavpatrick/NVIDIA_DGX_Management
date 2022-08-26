@@ -1,3 +1,6 @@
+### Note- These steps will only work when Kubernetes servive is not working
+
+
 Follow given steps to partition GPUs using MIG in NVIDIA DGX A100 if high level tool like NVIDIA GPU operator is not available:
 
 
