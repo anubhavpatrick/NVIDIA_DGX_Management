@@ -35,7 +35,7 @@ spec:
 
 5. Make hashed password entry in Dex
    
-   **kubectl edit configmap dex -n aut**
+   **kubectl edit configmap dex -n auth**
    
    A sample configmap after entry of user amit-seth is shown below
    
