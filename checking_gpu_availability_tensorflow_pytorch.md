@@ -5,7 +5,7 @@ import tensorflow as tf
 tf.config.list_physical_devices('GPU')
 ```
 
-Code to test GPU availability in PyTorch:
+### Code to test GPU availability in PyTorch:
 
 ```python
 # https://wandb.ai/ayush-thakur/dl-question-bank/reports/How-To-Check-If-PyTorch-Is-Using-The-GPU--VmlldzoyMDQ0NTU
