@@ -40,5 +40,11 @@ ipmitool user set name <id> <username>
 ipmitool user set password <id>
 ```
 
+6. To restart BMC without restarting the server
+```bash
+ipmitool bmc reset cold
+```
+
 ### Reference
 [1] https://www.intel.in/content/www/in/en/support/articles/000055688/server-products.html
+[2] https://serverfault.com/questions/205658/restarting-an-ibm-bmc-without-restarting-the-server-itself
